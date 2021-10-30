@@ -1,0 +1,14 @@
+{
+  "name": "problem4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "problem4.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
