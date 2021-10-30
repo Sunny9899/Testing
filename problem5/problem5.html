@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validator</title>
+</head>
+<body>
+    <input id="inpt"/>
+    <button id="sub" onclick="sbmt()">Validate</button>
+
+    <script>
+        let inpt=document.getElementById("inpt");
+        var num=false;
+        var caps=false;
+        var small=false;
+        var symbol=false;
+
+        function sbmt(){ 
+        if((inpt.value).length>=6){
+            
+            for(var i=0;i<inpt.value.length;i++){
+                var code=inpt.value.charCodeAt(i);
+               // console.log(code);
+               if(code>=48&&code<=57){
+                   num=true;
+               }
+               if(code>=65&&code<=90){
+                   caps=true;
+               }
+               if(code>=97&&code<=122){
+                   small=true;
+               }
+               if((code>=33&&code<=47)||(code>=58&&code<=64)||(code>=91&&code<=96)||(code>=123&&code<=126)){
+                   symbol=true;
+               }
+            }
+            if(!num){
+                console.log("Include Number");
+            }
+            if(!caps){
+                console.log("Include Capital Letter");
+            }
+            if(!small){
+                console.log("Include Small Letter");
+            }
+            if(!symbol){
+                console.log("Include Symbol");
+            }                                    
+            else if(num,caps,small,symbol){
+                alert("Password Valid");
+                inpt.value=null;
+                num=false;
+                caps=false;
+                small=false; 
+                symbol=false;
+            }
+        }
+        else{
+            alert("Password Length too Short");
+        }
+    }
+    </script>    
+</body>
+</html>
